@@ -1,0 +1,13 @@
+Flask==2.2.2
+joblib==1.2.0
+keras==2.9.0
+keras_utils==1.0.13
+matplotlib==3.5.2
+numpy==1.22.4
+opencv_python==4.6.0.66
+Pillow==9.4.0
+tensorflow==2.11.0
+tensorflow_macos==2.9.1
+torch==1.13.1
+torchvision==0.14.1
+Werkzeug==2.2.2
