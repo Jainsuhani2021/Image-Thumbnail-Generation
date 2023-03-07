@@ -11,3 +11,4 @@ tensorflow_macos==2.9.1
 torch==1.13.1
 torchvision==0.14.1
 Werkzeug==2.2.2
+gunicorn
