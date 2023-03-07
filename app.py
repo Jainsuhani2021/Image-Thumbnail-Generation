@@ -130,8 +130,8 @@ app = Flask(__name__,template_folder='/Users/SUHANI JAIN/Downloads/CB-WEBSITE-ma
 #model=pickle.load(open('detector3.pkl','rb'))
 UPLOAD_FOLDER='static/images/'
 app.config['UPLOAD_FOLDER']=UPLOAD_FOLDER
-model = load_model(r"C:\Users\SUHANI JAIN\Downloads\detector.h5")
-# model=joblib.load('detector.pkl')
+model = load_model("detector.h5")
+
 
 # f = open('detector.pkl', 'rb')
 # model = pickle.load(f)
@@ -183,13 +183,16 @@ def predict():
  startY = int(startY * ho)
  endX = int(endX * wo)
  endY = int(endY * ho)
- cropped_image = image[int(startY):int(endY), int(startX):int(endX)]
+ #cropped_image = image[int(startY):int(endY), int(startX):int(endX)]
     
- resized_image = cv2.resize(cropped_image, (w,h))
- resized_image = resized_image.astype('uint8')
- img = Image.fromarray(resized_image, "RGB")
-    #img.save(filename)
- img.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
+ #resized_image = cv2.resize(cropped_image, (w,h))
+ #resized_image = resized_image.astype('uint8')
+ #img = Image.fromarray(resized_image, "RGB")
+ #img.save(filename)
+ im = Image.open(image_path)
+ im1 = im.crop((startX, startY, endX, endY))
+ im1 = im1.resize((w,h)) 
+ im1.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
  image_path_new=os.path.join(app.config['UPLOAD_FOLDER'],filename)
      # flash("Image thumbnail is generated")
  return render_template('index.html',filename=filename)
