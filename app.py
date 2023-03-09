@@ -126,7 +126,7 @@ import os
 import urllib.request
 
 #app = Flask(__name__,template_folder='CB-WEBSITE-main/CB WEBSITE/templates',static_folder='CB-WEBSITE-main/CB WEBSITE/static')
-app = Flask(__name__,template_folder='/Users/SUHANI JAIN/Downloads/CB-WEBSITE-main/CB-WEBSITE-main/CB WEBSITE/templates',static_folder='/Users/SUHANI JAIN/Downloads/CB-WEBSITE-main/CB-WEBSITE-main/CB WEBSITE/static')
+app = Flask(__name__,template_folder='templates',static_folder='static')
 #model=pickle.load(open('detector3.pkl','rb'))
 UPLOAD_FOLDER='static/images/'
 app.config['UPLOAD_FOLDER']=UPLOAD_FOLDER
